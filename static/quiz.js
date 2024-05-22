@@ -36,7 +36,8 @@ var on_answer_click = function() {
 
     $(this).css("background-color", "lightgreen");
 
-    current_answer = $(this).html();
+    console.log($(this).attr("id"));
+    current_answer = $(this).attr("id");
 };
 
 $(document).on('click', '#ansA', on_answer_click);
