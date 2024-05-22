@@ -5,27 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Quiz v1</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="quiz.js"></script>
 </head>
 <body>
 <div class="box">Quiz v1</div>
 <progress class="progress" value="15" max="100">15%</progress>
 <div class="container">
-    <div class="notification is-primary">
+    <div id="question" class="notification is-primary">
         This container is <strong>centered</strong> on desktop and larger viewports.
     </div>
-    <div class="notification is-primary">
+    <div id="ansA" class="notification is-primary">
         tak
     </div>
-    <div class="notification is-primary">
+    <div id="ansB" class="notification is-primary">
         nie
     </div>
-    <div class="notification is-primary">
+    <div id="ansC" class="notification is-primary">
         może
     </div>
-    <div class="notification is-primary">
+    <div id="ansD" class="notification is-primary">
         chyba ty
     </div>
-    <button class="button is-warning is-dark">check</button>
+    <div id="infobox" class="notification is-warning">
+        Zaznacz poprawna odpowiedź.
+    </div>
+    <button id="check" class="button is-warning is-dark">check</button>
     <button class="button is-success is-dark">next</button>
 </div>
 
