@@ -3,6 +3,7 @@ var questionCounter = 1;
 var lastQuestion = 4;
 
 var check_answer = function(data) {
+
     if(current_answer==data["correct"]) {
         $('#infobox').html("Poprawna odpowiedź!");
         $("#next").attr('disabled', false);
@@ -29,6 +30,7 @@ var fetch_question = function(data) {
     $("#ansB").html(data["ansB"]);
     $("#ansC").html(data["ansC"]);
     $("#ansD").html(data["ansD"]);
+
 };
 
 $.getJSON("question/1", fetch_question);
@@ -58,6 +60,7 @@ var next_question = function() {
     $('#infobox').html("Zaznacz poprawna odpowiedź.");
     $("#next").attr('disabled', true);
     questionCounter = questionCounter + 1;
+    $('#progress').attr('value', questionCounter);
     $.getJSON("question/" + questionCounter, fetch_question);
     reset_color();
 
@@ -67,3 +70,11 @@ var next_question = function() {
 }
 
 $(document).on('click', '#next', next_question);
+
+
+var fetch_number_of_questions = function(data) {
+   console.log(data);
+    $('#progress').attr('max', data["num"]);
+    $('#progress').attr('value', questionCounter);
+}
+$.getJSON("num", fetch_number_of_questions);
